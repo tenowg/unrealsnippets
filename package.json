@@ -10,6 +10,10 @@
   "categories": [
     "Snippets"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenowg/unrealsnippets.git"
+  },
   "contributes": {
     "snippets": [
       {
@@ -23,3 +27,4 @@
     ]
   }
 }
+
