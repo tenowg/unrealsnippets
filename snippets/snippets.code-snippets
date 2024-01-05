@@ -1,0 +1,67 @@
+{
+    "UE_LOG": {
+		"prefix": "uelog",
+		"body": [
+			"UE_LOG(${1:LogTemp}, ${2:Warning}, TEXT(\"$3\");"
+		]
+	},
+	"WorldEventData": {
+		"prefix": "wdeventh",
+		"body": [
+			"#pragma once",
+			"",
+			"#include \"CoreMinimal.h\"",
+			"#include \"EventPayloadData.h\"",
+			"#include \"$TM_FILENAME_BASE.generated.h\"",
+			"",
+			"UCLASS()",
+			"class $1 U$TM_FILENAME_BASE : public UEventPayloadData",
+			"{",
+			"    GENERATED_BODY()",
+			"",
+			"    U$TM_FILENAME_BASE();",
+			"",
+			"    virtual void Init() override;",
+			"};",
+		],
+		"isFileTemplate": true
+	},
+	"WorldEventDataCpp": {
+		"prefix": "wdeventcpp",
+		"body": [
+			"#include \"Events/$TM_FILENAME_BASE.h\"",
+			"#include \"TVoxelGlobalTags.h\"",
+			"#include \"Events/Payloads/${TM_FILENAME_BASE}Payload.h\"",
+			"",
+			"U$TM_FILENAME_BASE::U$TM_FILENAME_BASE()",
+			"{",
+			"}",
+			"",
+			"void U$TM_FILENAME_BASE::Init()",
+			"{",
+			"    GameplayTag = FTVoxelGlobalTags::Get().GlobalEvent_${TM_FILENAME_BASE:$TM_FILENAME_BASE};",
+			"    PayloadClass = U${TM_FILENAME_BASE}Payload::StaticClass();",
+			"}"
+		],
+		"isFileTemplate": true
+	},
+	"WorldEventPayload": {
+		"prefix": "wdeventpayload",
+		"body": [
+			"#pragma once",
+			"",
+			"#include \"CoreMinimal.h\"",
+			"#include \"GlobalEventPayload.h\"",
+			"#include \"${TM_FILENAME_BASE}.generated.h\"",
+			"",
+			"UCLASS()",
+			"class $1 U${TM_FILENAME_BASE} : public UGlobalEventPayload",
+			"{",
+			"    GENERATED_BODY()",
+			"",
+			"public:",
+			"};",
+		],
+		"isFileTemplate": true
+	}
+}

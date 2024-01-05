@@ -1,0 +1,8 @@
+{
+    "UE_LOG2": {
+		"prefix": "uelog2",
+		"body": [
+			"UE_LOG(${1:LogTemp}, ${2:Warning}, TEXT(\"$3\");"
+		]
+	}
+}
