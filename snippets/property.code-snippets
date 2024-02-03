@@ -1,0 +1,20 @@
+{
+    "AllowPrivateAccess": {
+		"prefix": "ue-allowprivateaccess",
+		"body": [
+			"AllowPrivateAccess=true"
+		]
+	},
+	"ExposeOnSpawn": {
+		"prefix": "ue-exposeonspawn",
+		"body": [
+			"ExposeOnSpawn=true"
+		]
+	},
+	"BlueprintImplementableEvent": {
+		"prefix": "ue-bp-implementable",
+		"body": [
+			"BlueprintImplementableEvent"
+		]
+	}
+}

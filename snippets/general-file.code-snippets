@@ -1,0 +1,73 @@
+{
+    "UE_ACTOR": {
+		"prefix": "ue-actor",
+		"isFileTemplate": true,
+		"body": [
+			"// Fill out your copyright notice in the Description page of Project Settings.",
+            "",
+            "#pragma once",
+            "",
+            "#include \"CoreMinimal.h\"",
+            "#include \"GameFramework/Actor.h\"",
+            "#include \"$TM_FILENAME_BASE.generated.h\"",
+            "",
+            "UCLASS()",
+            "class $0_API A$TM_FILENAME_BASE : public AActor",
+            "{",
+            "	GENERATED_BODY()",
+            "",
+            "public:",	
+            "	A$TM_FILENAME_BASE();",
+            "",
+            "protected:",
+            "   /* begin AActor implementation */"
+            "	virtual void BeginPlay() override;",
+	        "   virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;",
+            "   /* end AActor implementation */"
+            "",
+            "private:",
+            "",
+            "};"
+		]
+	},
+    "GAMEPLAY_NATIVE_TAGS_H": {
+        "prefix": "ue-gameplay-native-header",
+        "isFileTemplate": true,
+        "body": [
+            "#pragma once",
+            "",
+            "#include \"CoreMinimal.h\"",
+            "#include \"GameplayTagContainer.h\"",
+            "#include \"GameplayTagsManager.h\"",
+            "",
+            "struct $0_API F$TM_FILENAME_BASE : public FGameplayTagNativeAdder",
+            "{",
+            "   FGameplayTag ${1:SomeGameplayTagVariable};",
+            "",
+            "   FORCEINLINE static const F$TM_FILENAME_BASE& Get() { return $TM_FILENAME_BASE; }",
+            "",
+            "protected:",
+            "",
+            "    virtual void AddTags() override",
+            "    {",
+            "        UGameplayTagsManager& Manager = UGameplayTagsManager::Get();",
+            "",
+            "        $1 = Manager.AddNativeGameplayTag(TEXT(\"${2:Some.Gameplay.Tag}\"));",
+            "    }",
+            "",
+            "private:",
+            "",
+            "    static F$TM_FILENAME_BASE $TM_FILENAME_BASE;",
+            "};",
+        ]
+    },
+    "GAMEPLAY_NATIVE_TAGS_C": {
+        "prefix": "ue-gameplay-native-code",
+        "isFileTemplate": true,
+        "body": [
+            "#include \"$TM_FILENAME_BASE.h\"",
+            "",
+            "F$TM_FILENAME_BASE F$TM_FILENAME_BASE::$TM_FILENAME_BASE;",
+        ]
+    }
+}

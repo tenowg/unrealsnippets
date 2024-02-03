@@ -1,8 +1,8 @@
 {
-    "UE_LOG": {
-		"prefix": "uelog",
+	"GlobalEventsSubsystem": {
+		"prefix": "ge-subsystem",
 		"body": [
-			"UE_LOG(${1:LogTemp}, ${2:Warning}, TEXT(\"$3\");"
+			"UGlobalEventsSubsystem* GlobalSubSystem = GetWorld()->GetGameInstance()->GetSubsystem<UGlobalEventsSubsystem>();"
 		]
 	},
 	"WorldEventData": {
