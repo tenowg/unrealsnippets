@@ -4,5 +4,11 @@
 		"body": [
 			"UE_LOG(${1:LogTemp}, ${2:Warning}, TEXT(\"$3\"));"
 		]
+	},
+	"UE_LOG_FORMATTED": {
+		"prefix": "ue-log-formatted",
+		"body": [
+			"UE_LOG(${1:LogTemp}, ${2:Warning,Error}, TEXT(\"$3, %s\"), $4);"
+		]
 	}
 }
