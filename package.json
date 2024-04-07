@@ -32,6 +32,10 @@
       {
         "language": "cpp",
         "path": "./snippets/property.code-snippets"
+      },
+      {
+        "language": "cpp",
+        "path": "./snippets/BP_Interface.code-snippets"
       }
     ]
   }
