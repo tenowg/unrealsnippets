@@ -14,16 +14,16 @@
             "UCLASS()",
             "class $0_API A$TM_FILENAME_BASE : public AActor",
             "{",
-            "	GENERATED_BODY()",
+            "    GENERATED_BODY()",
             "",
             "public:",	
-            "	A$TM_FILENAME_BASE();",
+            "    A$TM_FILENAME_BASE();",
             "",
             "protected:",
-            "   /* begin AActor implementation */"
-            "	virtual void BeginPlay() override;",
+            "   /* begin AActor implementation */",
+            "   virtual void BeginPlay() override;",
 	        "   virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;",
-            "   /* end AActor implementation */"
+            "   /* end AActor implementation */",
             "",
             "private:",
             "",
@@ -68,6 +68,38 @@
             "#include \"$TM_FILENAME_BASE.h\"",
             "",
             "F$TM_FILENAME_BASE F$TM_FILENAME_BASE::$TM_FILENAME_BASE;",
+        ]
+    },
+    "UObject_H": {
+        "prefix": "ue-object-header",
+        "isFileTemplate": true,
+        "body": [
+            "#pragma once",
+            "",
+            "#include \"CoreMinimal.h\"",
+            "#include \"UObject/NoExportTypes.h\"",
+            "#include \"$TM_FILENAME_BASE.generated.h\"",
+            "",
+            "/**",
+            "* ",
+            "*/",
+            "UCLASS()",
+            "class $0_API U$TM_FILENAME_BASE : public UObject",
+            "{",
+            "    GENERATED_BODY()",
+            "public:",
+            "",
+            "protected:",
+            "",
+            "private:",
+            "};",
+        ]
+    },
+    "UObject_C": {
+        "prefix": "ue-object-code",
+        "isFileTemplate": true,
+        "body": [
+            "#include \"$TM_FILENAME_BASE.h\"",
         ]
     }
 }
