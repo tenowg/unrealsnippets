@@ -3,6 +3,15 @@
 All notable changes to the "unrealsnippets" extension will be documented in this file.
 
 ## Changes
+- 4/21/2024
+    - Added GameplayAbility snippets
+        - Attribute Header (gas-attribute-set-header)
+        - Attribute Code (gas-attribute-set-code)
+        - Attribute life rep (gas-lifetime-rep-attribute)
+        - Attribute define (gas-attribute-replicated)/(gas-attribute)
+        - Function declare for OnRep (gas-attribute-rep-declare)
+        - Code for Post evaluate attribute (gas-attribute-evaluate-post)
+
 - 4/20/2024
     - Added AsyncTask (ue-aynctask)
     - Changed Actor (ue-actor) to (ue-actor-header)

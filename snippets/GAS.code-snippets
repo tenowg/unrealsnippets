@@ -1,0 +1,110 @@
+{
+    "GAS_AttributeSet_Header": {
+        "prefix": "gas-attribute-set-header",
+        "isFileTemplate": true,
+        "body": [
+            "#pragma once",
+            "",
+            "#include \"CoreMinimal.h\"",
+            "#include \"AttributeSet.h\"",
+            "#include \"AbilitySystemComponent.h\"",
+            "#include \"$TM_FILENAME_BASE.generated.h\"",
+            "",
+            "#define ATTRIBUTE_ACCESSORS(ClassName, PropertyName) \\",
+            "    GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, PropertyName) \\",
+            "    GAMEPLAYATTRIBUTE_VALUE_GETTER(PropertyName) \\",
+            "    GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName) \\",
+            "    GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)",
+            "",
+            "class FLifetimeProperty;",
+            "",
+            "/**",
+            " *",
+            " */",
+            "UCLASS()",
+            "class $0_API U$TM_FILENAME_BASE : UAttributeSet",
+            "{",
+            "    GENERATED_BODY()",
+            "",
+            "    U$TM_FILENAME_BASE();",
+            "",
+            "    virtual void PostGameplayEffectExecute(const struct FGameplayEffectModCallbackData &Data) override;",
+            "",
+            "public:",
+            "",
+            "protected:",
+            "",
+            "private:",
+            "    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const;",
+            "}"
+        ],
+        "description": "The header file for a custom attribute set"
+    },
+    "GAS_AttributeSet_Code": {
+        "prefix": "gas-attribute-set-code",
+        "isFileTemplate": true,
+        "body": [
+            "#include \"$TM_FILENAME_BASE.h\"",
+            "#include \"GameplayEffectExtensions.h\"",
+            "",
+            "U$TM_FILENAME_BASE::U$TM_FILENAME_BASE()",
+            "{}",
+            "",
+            "void U$TM_FILENAME_BASE::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)",
+            "{",
+            "    Super::PostGameplayEffectExecute(Data);",
+            "}",
+            "",
+            "void U$TM_FILENAME_BASE::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const",
+            "{",
+            "    Super::GetLifetimeReplicatedProps(OutLifetimeProps);",
+            "}",
+        ]
+    },
+    "GAS_Lifetime_Rep": {
+        "prefix": "gas-lifetime-rep-attribute",
+        "body": [
+            "DOREPLIFETIME_CONDITION_NOTIFY(U$TM_FILENAME_BASE, $0, COND_OwnerOnly, REPNOTIFY_OnChanged);"
+        ]
+    },
+    "GAS_Attribute_Rep": {
+        "prefix": "gas-attribute-replicated",
+        "body": [
+            "    UPROPERTY(BlueprintReadOnly, Category = \"$0\", ReplicatedUsing = OnRep_$1)",
+            "    FGameplayAttributeData $1",
+            "    ATTRIBUTE_ACCESSORS(U$TM_FILENAME_BASE, $1)",
+            "",
+            "    UFUNCTION()",
+            "    void OnRep_$1(const FGameplayAttributeData& Old$1);"
+        ],
+        "description": "A single attribute, with onrep"
+    },
+    "GAS_Attribute": {
+        "prefix": "gas-attribute",
+        "body": [
+            "    UPROPERTY(BlueprintReadOnly, Category = \"$0\")",
+            "    FGameplayAttributeData $1",
+            "    ATTRIBUTE_ACCESSORS(U$TM_FILENAME_BASE, $1)"
+        ],
+        "description": "A single attribute"
+    },
+    "GAS_Attribute_Rep_Declare": {
+        "prefix": "gas-attribute-rep-declare",
+        "body": [
+            "void U$TM_FILENAME_BASE::OnRep_$0(const FGameplayAttributeData& Old$0)",
+            "{",
+            "    GAMEPLAYATTRIBUTE_REPNOTIFY(U$TM_FILENAME_BASE, $0, Old$0);",
+            "}"
+        ]
+    },
+    "GAS_Evaluate_attr": {
+        "prefix": "gas-attribute-evaluate-post",
+        "body": [
+            "if(Data.EvaluatedData.Attribute == Get$0Attribute())",
+            "{",
+            "    //Example",
+            "    Set$0(FMath::Clamp(Get$0(), 0.f, GetMax$0()))",
+            "}"
+        ]
+    }
+}
