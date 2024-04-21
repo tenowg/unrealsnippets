@@ -1,6 +1,6 @@
 {
-    "UE_ACTOR": {
-		"prefix": "ue-actor",
+    "UE_ACTOR_H": {
+		"prefix": "ue-actor-header",
 		"isFileTemplate": true,
 		"body": [
 			"// Fill out your copyright notice in the Description page of Project Settings.",
@@ -30,6 +30,13 @@
             "};"
 		]
 	},
+    "UE_ACTOR_C": {
+        "prefix": "ue_actor_code",
+        "isFileTemplate": true,
+        "body": [
+            "#include \"$TM_FILENAME_BASE.h\"",
+        ]
+    },
     "GAMEPLAY_NATIVE_TAGS_H": {
         "prefix": "ue-gameplay-native-header",
         "isFileTemplate": true,

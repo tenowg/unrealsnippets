@@ -10,5 +10,23 @@
 		"body": [
 			"UE_LOG(${1:LogTemp}, ${2:Warning}, TEXT(\"$3, %s\"), $4);"
 		]
+	},
+	"UE_ASYNCTASK": {
+		"prefix": "ue-asynctask",
+		"body": [
+			"// Schedule a task on any thread with a high or normal priority",
+			"AsyncTask(ENamedThreads::AnyHiPriThreadNormalTask, [Params ...] ()",
+			"{",
+			"",
+			"    // Do some stuff here... ",
+			"",
+			"    // Once the task is done schedule a task back to the gamethread.",
+    		"    // This is optional depending on the situation, you don't have to go back to the mainthread. ",
+			"    AsyncTask(ENamedThreads::GameThread, [Params ...] ()",
+			"    {",
+            "        // Return something or execute a delegate ",
+			"    });",
+			"});"
+		]
 	}
 }
