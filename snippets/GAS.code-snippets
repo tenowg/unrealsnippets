@@ -22,7 +22,7 @@
             " *",
             " */",
             "UCLASS()",
-            "class $0_API U$TM_FILENAME_BASE : UAttributeSet",
+            "class $0_API U$TM_FILENAME_BASE : public UAttributeSet",
             "{",
             "    GENERATED_BODY()",
             "",
@@ -36,7 +36,7 @@
             "",
             "private:",
             "    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const;",
-            "}"
+            "};"
         ],
         "description": "The header file for a custom attribute set"
     },
@@ -45,7 +45,7 @@
         "isFileTemplate": true,
         "body": [
             "#include \"$TM_FILENAME_BASE.h\"",
-            "#include \"GameplayEffectExtensions.h\"",
+            "#include \"GameplayEffectExtension.h\"",
             "",
             "U$TM_FILENAME_BASE::U$TM_FILENAME_BASE()",
             "{}",
