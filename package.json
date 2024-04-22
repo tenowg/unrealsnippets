@@ -3,7 +3,7 @@
   "displayName": "UnrealSnippets",
   "description": "",
   "publisher": "tenowg",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "pricing": "Free",
   "engines": {
     "vscode": "^1.85.0"
