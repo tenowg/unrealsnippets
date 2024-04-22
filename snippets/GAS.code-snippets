@@ -72,7 +72,7 @@
         "prefix": "gas-attribute-replicated",
         "body": [
             "    UPROPERTY(BlueprintReadOnly, Category = \"$0\", ReplicatedUsing = OnRep_$1)",
-            "    FGameplayAttributeData $1",
+            "    FGameplayAttributeData $1;",
             "    ATTRIBUTE_ACCESSORS(U$TM_FILENAME_BASE, $1)",
             "",
             "    UFUNCTION()",
@@ -84,7 +84,7 @@
         "prefix": "gas-attribute",
         "body": [
             "    UPROPERTY(BlueprintReadOnly, Category = \"$0\")",
-            "    FGameplayAttributeData $1",
+            "    FGameplayAttributeData $1;",
             "    ATTRIBUTE_ACCESSORS(U$TM_FILENAME_BASE, $1)"
         ],
         "description": "A single attribute"
@@ -104,7 +104,7 @@
             "if(Data.EvaluatedData.Attribute == Get$0Attribute())",
             "{",
             "    //Example",
-            "    Set$0(FMath::Clamp(Get$0(), 0.f, GetMax$0()))",
+            "    Set$0(FMath::Clamp(Get$0(), 0.f, GetMax$0()));",
             "}"
         ]
     }
