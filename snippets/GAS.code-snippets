@@ -46,6 +46,7 @@
         "body": [
             "#include \"$TM_FILENAME_BASE.h\"",
             "#include \"GameplayEffectExtension.h\"",
+            "#include \"Net/UnrealNetwork.h\"",
             "",
             "U$TM_FILENAME_BASE::U$TM_FILENAME_BASE()",
             "{}",
