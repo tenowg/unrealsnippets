@@ -25,4 +25,4 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - run: npm install
-      - run: npm i -g vsce
+      - run: npm i -g @vscode/vsce
