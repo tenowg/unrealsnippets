@@ -40,6 +40,10 @@
       {
         "language": "cpp",
         "path": "./snippets/GAS.code-snippets"
+      },
+      {
+        "language": "cpp",
+        "path": "./snippets/MASS.code-snippets"
       }
     ]
   }

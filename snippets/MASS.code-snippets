@@ -1,0 +1,39 @@
+{
+    "MASS_Fragment": {
+        "prefix": "mass-fragment",
+        "isFileTemplate": true,
+        "body": [
+            "#pragma once",
+            "",
+            "#include \"CoreMinimal.h\"",
+            "#include \"MassEntityTypes.h\"",
+            "#include \"$TM_FILENAME_BASE.generated.h\"",
+            "",
+            "USTRUCT(BlueprintType)",
+            "struct $0_API F$TM_FILENAME_BASE : public FMassFragment",
+            "{",
+	        "    GENERATED_BODY()",
+            "",
+	        "    UPROPERTY(EditAnywhere)",
+	        "    FMassEntityHandle Entity;",
+            "};",
+        ]
+    },
+    "MASS_Tag": {
+        "prefix": "mass-tag",
+        "isFileTemplate": true,
+        "body": [
+            "#pragma once",
+            "",
+            "#include \"CoreMinimal.h\"",
+            "#include \"MassEntityTypes.h\"",
+            "#include \"$TM_FILENAME_BASE.generated.h\"",
+            "",
+            "USTRUCT()",
+            "struct $0_API F$TM_FILENAME_BASE : public FMassTag",
+            "{",
+	        "    GENERATED_BODY()",
+            "};",
+        ]
+    }
+}

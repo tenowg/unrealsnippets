@@ -3,6 +3,12 @@
 All notable changes to the "unrealsnippets" extension will be documented in this file.
 
 ## Changes
+
+- 4/26/2024
+    - Started adding Mass AI snippets
+        - Fragment (mass-fragment)
+        - Tag (mass-tag)
+
 - 4/21/2024
     - Added GameplayAbility snippets
         - Attribute Header (gas-attribute-set-header)
