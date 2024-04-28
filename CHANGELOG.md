@@ -4,6 +4,9 @@ All notable changes to the "unrealsnippets" extension will be documented in this
 
 ## Changes
 
+- 4/27/2024
+    - Added ActorComponent (ue-actor-component-header, ue-actor-component-code)
+    
 - 4/26/2024
     - Started adding Mass AI snippets
         - Fragment (mass-fragment)

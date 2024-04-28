@@ -108,5 +108,62 @@
         "body": [
             "#include \"$TM_FILENAME_BASE.h\"",
         ]
+    },
+    "Actor_Component_header": {
+        "prefix": "ue-actor-component-header",
+        "isFileTemplate": true,
+        "body": [
+            "#pragma once",
+            "",
+            "#include \"CoreMinimal.h\"",
+            "#include \"Components/ActorComponent.h\"",
+            "#include \"$TM_FILENAME_BASE.generated.h\"",
+            "",
+            "UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )",
+            "class $0_API U$TM_FILENAME_BASE : public UActorComponent",
+            "{",
+	        "    GENERATED_BODY()",
+            "",
+            "public:",	
+	        "    // Sets default values for this component's properties",
+	        "    U$TM_FILENAME_BASE();",
+            "",
+            "protected:",
+	        "    // Called when the game starts",
+	        "    virtual void BeginPlay() override;",
+            "",
+            "public:",	
+	        "    // Called every frame",
+	        "    virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;",
+            "",
+            "};"
+        ]
+    },
+    "Actor_Component_code": {
+        "prefix": "ue-actor-component-code",
+        "isFileTemplate": true,
+        "body": [
+            "#include \"$TM_FILENAME_BASE.h\"",
+            "",
+            "// Sets default values for this component's properties",
+            "U$TM_FILENAME_BASE::U$TM_FILENAME_BASE()",
+            "{",
+	        "    // Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features",
+	        "    // off to improve performance if you don't need them.",
+	        "    PrimaryComponentTick.bCanEverTick = true;",
+            "}",
+            "",
+            "// Called when the game starts",
+            "void U$TM_FILENAME_BASE::BeginPlay()",
+            "{",
+	        "    Super::BeginPlay();",
+            "}",
+            "",
+            "// Called every frame",
+            "void U$TM_FILENAME_BASE::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)",
+            "{",
+	        "    Super::TickComponent(DeltaTime, TickType, ThisTickFunction);",
+            "}"
+        ]
     }
 }
