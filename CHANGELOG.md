@@ -4,6 +4,9 @@ All notable changes to the "unrealsnippets" extension will be documented in this
 
 ## Changes
 
+- 4/29/2024
+    - Added MassProcessor (mass-processor-header, mass-processor-code)
+    
 - 4/27/2024
     - Added ActorComponent (ue-actor-component-header, ue-actor-component-code)
     
